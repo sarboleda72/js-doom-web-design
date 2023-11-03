@@ -12,7 +12,6 @@ menuCer.addEventListener("click", function () {
   slidingMenu.style.right = '-320px';
 });
 
-
 // About us Tab
 
 var aboutUs = {
@@ -25,30 +24,30 @@ var unseletectedColor = "#646872";
 var seletectedColor = "#2A2D34";
 
 //captura de About As
-const btnMis=document.getElementById("mision");
-const btnVis=document.getElementById("vision");
-const btnVal=document.getElementById("values");
+const btnMis = document.getElementById("mision");
+const btnVis = document.getElementById("vision");
+const btnVal = document.getElementById("values");
 const cajTex = document.getElementById("box-text");
 
 btnVal.addEventListener("click", function () {
-  btnVal.style.backgroundColor=seletectedColor;
-  btnMis.style.backgroundColor=unseletectedColor;
-  btnVis.style.backgroundColor=unseletectedColor;
-  cajTex.innerHTML=aboutUs.Values;
+  btnVal.style.backgroundColor = seletectedColor;
+  btnMis.style.backgroundColor = unseletectedColor;
+  btnVis.style.backgroundColor = unseletectedColor;
+  cajTex.innerHTML = aboutUs.Values;
 });
 
 btnMis.addEventListener("click", function () {
-  btnMis.style.backgroundColor=seletectedColor;
-  btnVal.style.backgroundColor=unseletectedColor;
-  btnVis.style.backgroundColor=unseletectedColor;
-  cajTex.innerHTML=aboutUs.Mission;
+  btnMis.style.backgroundColor = seletectedColor;
+  btnVal.style.backgroundColor = unseletectedColor;
+  btnVis.style.backgroundColor = unseletectedColor;
+  cajTex.innerHTML = aboutUs.Mission;
 });
 
 btnVis.addEventListener("click", function () {
-  btnVis.style.backgroundColor=seletectedColor;
-  btnVal.style.backgroundColor=unseletectedColor;
-  btnMis.style.backgroundColor=unseletectedColor;
-  cajTex.innerHTML=aboutUs.Vision;
+  btnVis.style.backgroundColor = seletectedColor;
+  btnVal.style.backgroundColor = unseletectedColor;
+  btnMis.style.backgroundColor = unseletectedColor;
+  cajTex.innerHTML = aboutUs.Vision;
 });
 // Service slider
 
@@ -70,17 +69,43 @@ var ourServices = [
 
 ];
 
+var tituloCarrusel = document.getElementById("service-title");
+var textoCarrusel = document.getElementById("service-text");
+var btnPrevioCarrusel = document.getElementById("service-previous");
+var btnSiguienteCarrusel = document.getElementById("service-next");
 
-
+btnPrevioCarrusel.addEventListener("click", function () {
+  console.log(tituloCarrusel.textContent);
+  if (tituloCarrusel.textContent == "Web design") {
+    tituloCarrusel.textContent = ourServices[2].title;
+    textoCarrusel.textContent = ourServices[2].text;
+  } else if (tituloCarrusel.textContent == "Digital Marketing") {
+    tituloCarrusel.textContent = ourServices[1].title;
+    textoCarrusel.textContent = ourServices[1].text;
+  } else if (tituloCarrusel.textContent == "Branding") {
+    tituloCarrusel.textContent = ourServices[0].title;
+    textoCarrusel.textContent = ourServices[0].text;
+  }
+}
+)
+btnSiguienteCarrusel.addEventListener("click", function () {
+  console.log(tituloCarrusel.textContent);
+  if (tituloCarrusel.textContent == "Web design") {
+    tituloCarrusel.textContent = ourServices[1].title;
+    textoCarrusel.textContent = ourServices[1].text;
+  } else if (tituloCarrusel.textContent == "Digital Marketing") {
+    tituloCarrusel.textContent = ourServices[0].title;
+    textoCarrusel.textContent = ourServices[0].text;
+  } else if (tituloCarrusel.textContent == "Branding") {
+    tituloCarrusel.textContent = ourServices[2].title;
+    textoCarrusel.textContent = ourServices[2].text;
+  }
+})
 
 
 // Footer
 
-
-
-
-
-
-
-
-
+var anoActual=document.getElementById("current_year");
+var fecha= new Date();
+var ano=fecha.getFullYear();
+anoActual.textContent=ano;
